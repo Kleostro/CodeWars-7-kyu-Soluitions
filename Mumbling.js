@@ -1,0 +1,23 @@
+/*
+Mumbling
+
+ESCRIPTION:
+  
+  This time no story, no theory. The examples below show you how to write function accum:
+  
+  Examples:
+  accum("abcd") -> "A-Bb-Ccc-Dddd"
+  accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+  accum("cwAt") -> "C-Ww-Aaa-Tttt"
+  The parameter of accum is a string which includes only letters from a..z and A..Z.
+
+SOLUTION: 
+*/
+const accum = (s) => {
+  let sLowerCase = s.toLowerCase()
+  let arr = []
+  for(let i = 0; i < sLowerCase.length; i++) {
+    arr.push(sLowerCase[i].repeat(i + 1).replace(/(^|\s)\S/g, function(a) {return a.toUpperCase()}))
+  }
+  return arr.join('-')
+}
