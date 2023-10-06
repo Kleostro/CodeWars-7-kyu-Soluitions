@@ -15,11 +15,4 @@ ESCRIPTION:
 
 SOLUTION: 
 */
-const isIsogram = (str) => {
-  str = str.toLowerCase()
-  if(str.length === new Set([...str]).size) {
-    return true;
-  } else {
-    return false
-  }
-}
+const isIsogram = (str) => str.toLowerCase().length === new Set([...str.toLowerCase()]).size
