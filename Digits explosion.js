@@ -20,3 +20,6 @@ const explode = (s) => {
   })
   return result;
 }
+
+SOLUTION #2: 
+const explode = (s) => s.split('').map((letter) => letter.repeat(+letter)).join('')
